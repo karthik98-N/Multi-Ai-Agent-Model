@@ -1,3 +1,14 @@
+---
+title: Multi Agent AI Verification Platform
+emoji: 🛡️
+colorFrom: red
+colorTo: yellow
+sdk: gradio
+sdk_version: 4.44.0
+app_file: app.py
+pinned: false
+---
+
 # HackFusion 2026: Multi-Agent AI Verification Platform
 
 > **"Our system does not blindly trust an AI answer. It plans, searches, generates, independently audits, red-team attacks, self-corrects, and only accepts when empirical evidence proves the claims."**
