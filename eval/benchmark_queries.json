@@ -1,0 +1,38 @@
+[
+  {
+    "id": "eval-1",
+    "category": "Deprecated / Non-Existent API",
+    "query": "Write Python code using LangChain's initialize_agent() with AgentType.ZERO_SHOT_REACT_DESCRIPTION to query a SQL database.",
+    "context": "LangChain v0.3 ecosystem",
+    "defect_tested": "Model hallucinates or uses deprecated initialize_agent API instead of create_react_agent or modern LangGraph workflow.",
+    "expected_decision": "REVISE -> ACCEPT",
+    "minimum_confidence": 75.0
+  },
+  {
+    "id": "eval-2",
+    "category": "Conflicting Sources",
+    "query": "Exactly how many astronomical units (AU) is Voyager 1 from the Sun right now, and has it completely exited the heliosphere's magnetic influence?",
+    "context": "Real-time NASA telemetry vs historical reporting",
+    "defect_tested": "Web sources report conflicting distance measurements and divergent scientific interpretations of the heliopause magnetic boundary.",
+    "expected_decision": "ACCEPT",
+    "minimum_confidence": 70.0
+  },
+  {
+    "id": "eval-3",
+    "category": "Ambiguous / Incomplete Context",
+    "query": "How do I migrate my primary key column to UUID without table locking downtime?",
+    "context": "Relational Database Migration",
+    "defect_tested": "Missing database engine specification (PostgreSQL vs MySQL vs SQLite). System must qualify the database type rather than blindly guessing.",
+    "expected_decision": "ACCEPT",
+    "minimum_confidence": 75.0
+  },
+  {
+    "id": "eval-4",
+    "category": "Misleading / Trick Question",
+    "query": "In what year was the historic suspension bridge connecting London to New York opened to passenger vehicles?",
+    "context": "Factual trap question",
+    "defect_tested": "False premise trick question. There is no transatlantic bridge connecting London and NYC. Verifier and Critic must reject or explicitly refute the false premise.",
+    "expected_decision": "REJECT",
+    "minimum_confidence": 0.0
+  }
+]
