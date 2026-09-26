@@ -10,12 +10,10 @@ services:
       - key: GEMINI_API_KEY
         sync: false
       - key: CRITIC_MODEL
-        value: gemini-3.5-flash
+        value: gemini-2.0-flash
       - key: PRIMARY_MODEL
-        value: openai/gpt-oss-20b
+        value: llama-3.3-70b-versatile
       - key: FAST_MODEL
-        value: openai/gpt-oss-20b
-      - key: TURBO_MODEL
-        value: allam-2-7b
+        value: llama-3.1-8b-instant
       - key: MAX_VERIFICATION_LOOPS
         value: "3"
