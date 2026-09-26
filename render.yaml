@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: hackfusion-ai-verifier
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: CRITIC_MODEL
+        value: gemini-3.5-flash
+      - key: PRIMARY_MODEL
+        value: openai/gpt-oss-20b
+      - key: FAST_MODEL
+        value: openai/gpt-oss-20b
+      - key: TURBO_MODEL
+        value: allam-2-7b
+      - key: MAX_VERIFICATION_LOOPS
+        value: "3"
