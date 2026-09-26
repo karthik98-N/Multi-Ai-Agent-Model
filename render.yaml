@@ -17,3 +17,5 @@ services:
         value: llama-3.1-8b-instant
       - key: MAX_VERIFICATION_LOOPS
         value: "3"
+      - key: VITE_API_URL
+        value: https://hackfusion-ai-verifier.onrender.com

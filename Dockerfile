@@ -19,6 +19,9 @@ COPY frontend/package*.json ./frontend/
 WORKDIR /app/frontend
 RUN npm install
 COPY frontend/ ./
+# Bake in the backend URL at build time (set via Render build env var)
+ARG VITE_API_URL
+ENV VITE_API_URL=${VITE_API_URL}
 RUN npm run build
 
 # 3. Setup Backend
