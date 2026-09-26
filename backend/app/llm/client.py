@@ -18,10 +18,10 @@ logger = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 
 _DEFAULTS: Dict[str, str] = {
-    "TURBO_MODEL":   "allam-2-7b",
-    "FAST_MODEL":    "qwen/qwen3.8-27b",
-    "PRIMARY_MODEL": "openai/gpt-oss-20b",
-    "CRITIC_MODEL":  "gemini-3.8-flash",
+    "TURBO_MODEL":   "llama3-8b-8192",
+    "FAST_MODEL":    "llama-3.3-70b-versatile",
+    "PRIMARY_MODEL": "llama-3.3-70b-versatile",
+    "CRITIC_MODEL":  "gemini-2.5-flash",
 }
 
 # Max tokens per tier — keeps latency predictable
@@ -33,7 +33,8 @@ _TIER_MAX_TOKENS: Dict[str, int] = {
 }
 
 # Groq models that do NOT support response_format=json_object
-_NO_JSON_MODE: set = {"allam-2-7b"}
+# Models that do NOT support response_format=json_object on Groq
+_NO_JSON_MODE: set = {"llama3-8b-8192"}
 
 
 def clean_json_string(raw: str) -> str:
@@ -272,7 +273,7 @@ class LLMClient:
 
         model = os.getenv("CRITIC_MODEL", _DEFAULTS["CRITIC_MODEL"]).strip()
         if "gemini" not in model:
-            model = "gemini-3.8-flash"
+            model = "gemini-2.5-flash"
 
         full_prompt = f"{system_instruction}\n\nTask:\n{prompt}"
         if json_output:
