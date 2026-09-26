@@ -18,4 +18,4 @@ services:
       - key: MAX_VERIFICATION_LOOPS
         value: "3"
       - key: VITE_API_URL
-        value: https://hackfusion-ai-verifier.onrender.com
+        value: https://multi-ai-agent-model.onrender.com
